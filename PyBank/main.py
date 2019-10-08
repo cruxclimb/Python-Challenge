@@ -20,14 +20,26 @@ import csv
 # Path to collect data from the homework folder
 pyBank_csv =  os.path.join('budget_data.csv')
 
+# Read in the CSV file
+with open(pyBank_csv, newline="") as csvfile:
 
-# Define the function and have it accept the 'bank_data' as its sole parameter
+    # Split the data on commas
+    csvreader = csv.reader(csvfile, delimiter=',')
+
+    # read the header row first
+    csv_header = next(csvfile)
+    data = list(csvreader)
+    row_count = len(data)
+
+
+    # Read through each row of data after the header
+    for row in csvreader:
 
 
 # Print the analysis
     print("Financial Analysis")
     print("----------------------------")
-    print(f'Total Months: {#insert months here}')
+    print(f'Total Months: {row_count}')
     print(f'Total: {#insert total here}')
     print(f'Average: {#insert average change here}')
     print(f'Greatest Increase in Profits: {#insert month-year amount in () here}')
@@ -35,11 +47,4 @@ pyBank_csv =  os.path.join('budget_data.csv')
 
 # Export a .txt file with the results
 
-# Read in the CSV file
-with open(pyBank_csv, 'r') as csvfile:
 
-    # Split the data on commas
-    csvreader = csv.reader(csvfile, delimiter=',')
-    header = next(csvreader)
-
-    for row in csvreader:
