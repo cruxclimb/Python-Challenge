@@ -21,19 +21,24 @@ import csv
 pyBank_csv =  os.path.join('budget_data.csv')
 
 
+# Define the function and have it accept the 'bank_data' as its sole parameter
+
 
 # Print the analysis
-print(f'Total Months: {#insert months here}')
-print(f'Total Months: {#insert months here}')
-print(f'Total Months: {#insert months here}')
-print(f'Total Months: {#insert months here}')
-print(f'Total Months: {#insert months here}')
-print(f'Total Months: {#insert months here}')
+    print("Financial Analysis")
+    print("----------------------------")
+    print(f'Total Months: {#insert months here}')
+    print(f'Total: {#insert total here}')
+    print(f'Average: {#insert average change here}')
+    print(f'Greatest Increase in Profits: {#insert month-year amount in () here}')
+    print(f'Greatest Decrease in Profits: {#insert month-year amount in () here}')
 
 # Export a .txt file with the results
 
 # Read in the CSV file
 with open(pyBank_csv, 'r') as csvfile:
+
+    # Split the data on commas
     csvreader = csv.reader(csvfile, delimiter=',')
     header = next(csvreader)
 
