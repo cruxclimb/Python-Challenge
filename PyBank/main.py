@@ -14,37 +14,41 @@
 # The greatest increase in profits (date and amount) over the entire period
 # The greatest decrease in losses (date and amount) over the entire period
 
+
 import os
 import csv
 
-# Path to collect data from the homework folder
-pyBank_csv =  os.path.join('budget_data.csv')
+with open("budget_data.csv") as file:
+    read_file=csv.reader(file)
+    csvreader=list(read_file)
+    csvreader_header=csvreader[0]
+    #select second row and everything after using :
+    csvreader=csvreader[1:]
 
-# Read in the CSV file
-with open(pyBank_csv, newline="") as csvfile:
+total=0 
 
-    # Split the data on commas
-    csvreader = csv.reader(csvfile, delimiter=',')
+for row in csvreader:
+    row_count = len(csvreader)-1
 
-    # read the header row first
-    csv_header = next(csvfile)
-    data = list(csvreader)
-    row_count = len(data)
+    total += int(row[1])
 
+    # nest an if statement to compare each row to print the greatest increase
+    inc= max(str(row[1]))
+    
+    # nest an if statement to compare each row to print the greatest decrease
+    dec= min(str(row[1]))
 
-    # Read through each row of data after the header
-    for row in csvreader:
+    # mean of the change from month to month
+    # create list for average change and append. 
+    # first row is not a change so "pop" the first row 
+    Avg = int(total/row_count)
+    
 
-
-# Print the analysis
-    print("Financial Analysis")
-    print("----------------------------")
-    print(f'Total Months: {row_count}')
-    print(f'Total: {#insert total here}')
-    print(f'Average: {#insert average change here}')
-    print(f'Greatest Increase in Profits: {#insert month-year amount in () here}')
-    print(f'Greatest Decrease in Profits: {#insert month-year amount in () here}')
-
-# Export a .txt file with the results
+print(f'Total Months: {row_count+1}')
+print (f'Total: {total}')
+print (f'Average: {Avg}')
+print (f'Greatest Increase in Profits: ({inc})')
+print (f'Greatest Decrease in Profits: ({dec})')
 
 
+# export text file with results

@@ -1,0 +1,15 @@
+print(f'Total: {#insert total here}')
+print(f'Average: {#insert average change here}')
+print(f'Greatest Increase in Profits: {#insert month-year amount in () here}')
+print(f'Greatest Decrease in Profits: {#insert month-year amount in () here}')
+
+    # read the header row first
+    csv_header = next(csvfile)
+
+
+
+
+
+
+
+# Export a .txt file with the results
