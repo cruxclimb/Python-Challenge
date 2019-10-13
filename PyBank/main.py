@@ -43,3 +43,8 @@ output_path = os.path.join("PyBank.txt")
 with open(output_path, 'w', newline='') as csvfile:
         csvwriter= csv.writer(csvfile, delimiter=',')
         csvwriter.writerow(["Financial_Analysis"])
+        csvwriter.writerow(["Total Months:  86"])
+        csvwriter.writerow(["Total: 38382578"])
+        csvwriter.writerow(["Average Change: $  -2315.12"])
+        csvwriter.writerow(["Greatest Increase in Profits:  Jan-2012 ($ 1926159 )"])
+        csvwriter.writerow(["Greatest Decrease in Profits:  Aug-2013 ($ -2196167 )"])

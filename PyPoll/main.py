@@ -11,8 +11,6 @@ with open("election_data.csv") as file:
 
     next(read_file)
     for row in read_file:
-        # candidate = line[-1]
-        # votes[candidate] += 1
 
         candidate.append(row[0])
         total_votes= len(candidate)
